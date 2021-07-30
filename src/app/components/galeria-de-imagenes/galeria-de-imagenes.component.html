@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Images Gallery</h1>
+  </div>
+
+  <div class="row" style="margin: 10px 0;">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="filterBy='all'">
+            Todos las personas
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="filterBy='hombre'">
+            Hombres
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="filterBy='mujer'">
+            Mujeres
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="filterBy='nino'">
+            Niños
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="filterBy='trans'">
+            Trans
+        </button>
+    </div>
+
+    <div class="col-sm-1"></div>
+
+    <div class="row">
+        <ul style="margin-bottom: 80px;">
+          <li *ngFor="let img of allImages | filterimages:filterBy">
+              <img src="{{img.url}}" class="img" width="240" height="170">
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
